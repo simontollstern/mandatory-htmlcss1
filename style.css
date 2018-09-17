@@ -1,0 +1,103 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html{
+  font-size: 16px;
+}
+
+body{
+  background-color: #fafafa;
+  color: #444;
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container{
+  max-width: 1200px;
+  margin: auto;
+}
+
+header{
+  background-color: hsla(40, 75%, 75%, 1);
+  box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.2);
+  overflow: auto;
+  position: fixed;
+  width: 100%;
+}
+
+.logo, header nav{
+  display: inline-block;
+}
+
+.logo{
+  float: left;
+}
+
+header nav{
+  float: right;
+}
+
+header h1{
+  font-family: 'Permanent Marker', cursive;
+  line-height: 80px;
+}
+
+header ul{
+  list-style-type: none;
+}
+
+header li{
+  display: inline-block;
+  line-height: 80px;
+  margin-left: 15px;
+}
+
+header a, footer a{
+  font-family: 'Lato', sans-serif;
+  text-decoration: none;
+  font-weight: 900;
+  color: hsl(0, 0%, 0%, 0.5);
+  padding-bottom: 5px;
+  border-bottom: 1px solid hsl(0, 0%, 0%, 0);
+  transition: 200ms ease all;
+}
+
+header a:hover, header li.active a, footer a:hover{
+  color: #444;
+  border-bottom: 1px solid #444;
+}
+
+main{
+  padding-top: 80px;
+  flex: 1;
+}
+
+main .container{
+  padding: 60px 0;
+  max-width: 400px;
+}
+
+footer{
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+footer *{
+  line-height: 80px;
+}
+
+footer p{
+  display: inline-block;
+}
+
+footer span{
+  padding: 0 30px;
+}
+
+footer a{
+  padding: 0;
+}
