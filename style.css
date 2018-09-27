@@ -16,13 +16,18 @@ body{
   min-height: 100vh;
 }
 
+p:not(:last-child){
+  margin-bottom: 30px;
+}
+
 .container{
   max-width: 1200px;
   margin: auto;
+  padding: 0 15px;
 }
 
 header{
-  background-color: hsla(40, 75%, 75%, 1);
+  background-image: linear-gradient(hsl(40, 75%, 80%), hsl(40, 75%, 70%));
   box-shadow: 0 0 10px 0 hsla(0, 0%, 0%, 0.2);
   overflow: auto;
   position: fixed;
@@ -37,8 +42,43 @@ header{
   float: left;
 }
 
+.bg{
+  height: 300px;
+  width: 100%;
+  background-image: url('square_bg.png');
+  background-repeat: repeat;
+  display: block;
+  position: absolute;
+  top: 80px;
+  z-index: -1;
+}
+
+.bg::after{
+  content: '';
+  height: 100%;
+  background-image: linear-gradient(transparent, #fafafa);
+  display: block;
+}
+
 header nav{
   float: right;
+  text-transform: uppercase;
+}
+
+header button{
+  height: 80px;
+  border: none;
+  background: transparent;
+  outline: none;
+  display: none;
+}
+
+header button span{
+  display: block;
+  height: 2px;
+  width: 25px;
+  margin: 6px;
+  background-color: #444;
 }
 
 header h1{
@@ -53,7 +93,8 @@ header ul{
 header li{
   display: inline-block;
   line-height: 80px;
-  margin-left: 15px;
+  margin-left: 30px;
+  font-size: 18px;
 }
 
 header a, footer a{
@@ -71,9 +112,15 @@ header a:hover, header li.active a, footer a:hover{
   border-bottom: 1px solid #444;
 }
 
+.logo a{
+  color: #444;
+}
+
 main{
   padding-top: 80px;
   flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 main .container{
@@ -81,9 +128,108 @@ main .container{
   max-width: 400px;
 }
 
+main div[class^='page']{
+  width: 100%;
+}
+
+main div[class^='page'] h1{
+  margin-bottom: 30px;
+}
+
+main div[class^='page'] p{
+  text-align: justify;
+  line-height: 24px;
+}
+
+.page-about img{
+  max-width: 100%;
+  margin-bottom: 45px;
+}
+
+.page-languages .container{
+  max-width: 100%;
+}
+
+.page-languages h1{
+  max-width: 400px;
+  margin: auto;
+}
+
+.page-languages table{
+  margin: auto;
+  border-spacing: 0;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-width: 1px 0;
+}
+
+.page-languages tr:nth-child(odd){
+  background-color: #f1f1f1;
+}
+
+.page-languages tr:nth-child(even){
+  background-color: #f7f7f7;
+}
+
+.page-languages th{
+  padding: 15px 45px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.page-languages th span{
+  font-weight: 400;
+  margin-left: 5px;
+}
+
+.page-languages td{
+  font-size: 20px;
+  padding: 15px 45px;
+}
+
+.page-links h2{
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.page-links ul{
+  margin-left: 60px;
+  font-size: 18px;
+}
+
+.page-contact label{
+  text-transform: uppercase;
+  color: #777;
+}
+
+.page-contact input:not([type="submit"]), .page-contact select, .page-contact textarea{
+  width: 100%;
+  font-size: 18px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  padding: 5px;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+.page-contact input[type="text"]:focus, .page-contact select:focus, .page-contact textarea:focus{
+  outline: none;
+  border: 1px solid #444;
+}
+
+.page-contact textarea{
+  resize: none;
+}
+
+.page-contact input[type="submit"]{
+  font-size: 18px;
+  padding: 5px;
+}
+
 footer{
   border-top: 1px solid #ccc;
   text-align: center;
+  background-color: #eee;
 }
 
 footer *{
@@ -100,4 +246,13 @@ footer span{
 
 footer a{
   padding: 0;
+}
+
+@media only screen and (max-width: 768px){
+  header nav button{
+    display: block;
+  }
+  header nav ul{
+    display: none;
+  }
 }

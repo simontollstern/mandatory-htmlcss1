@@ -7,16 +7,24 @@
     <link href="style.css" rel="stylesheet">
   </head>
   <body>
+    <div class="bg"></div>
     <header>
       <div class="container">
         <div class='logo'>
-          <h1>Simon Tollstern</h1>
+          <a href='index.html'>
+            <h1>Simon Tollstern</h1>
+          </a>
         </div>
         <nav>
+          <button>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
           <ul>
             <li><a href='index.html'>Hem</a></li>
             <li><a href='about.html'>Om mig</a></li>
-            <li><a href='movies.html'>Filmer</a></li>
+            <li><a href='languages.html'>Språk</a></li>
             <li><a href='links.html'>Länkar</a></li>
             <li class='active'><a href='contact.html'>Kontakt</a></li>
           </ul>
@@ -24,10 +32,33 @@
       </div>
     </header>
     <main>
-      <div class='container'>
-        <p>
-          main
-        </p>
+      <div class='page-contact'>
+        <div class='container'>
+          <h1>Kontakt</h1>
+          <form>
+            <label>
+              Namn
+              <input type="text" placeholder="Namn" required=true />
+            </label>
+            <label>
+              E-mail
+              <input type="email" placeholder="E-mail" required=true />
+            </label>
+            <label>
+              Ärende
+              <select>
+                <option>Fråga</option>
+                <option>...</option>
+                <option>...</option>
+              </select>
+            </label>
+            <label>
+              Meddelande
+              <textarea rows="10" required=true></textarea>
+            </label>
+            <input type="submit" />
+          </form>
+        </div>
       </div>
     </main>
     <footer>
